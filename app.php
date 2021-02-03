@@ -42,8 +42,6 @@ if(isset($_POST['submit'])){
         $age =  $_POST['age']; // yaş (sene)
 
         
-        $age=(int)$age;
-        
         switch($sex){
             case($sex=="Kadın"):
                 $sonuc=10*$weight + 6.25*$height- 5*$age +5;
