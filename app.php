@@ -1,24 +1,57 @@
-<?php
+<form action="odev1.php" method="post">
+    <label>Yas:</label>
+    <input type="text" name="yas" />
+    <input type="submit" name="submit" />
+</form>
 
-$sex = "male"; // cinsiyet (male/female)
-$weight = 55; // kilo (kg)
-$height = 170; // boy (cm)
-$age = 25; // yaş (sene)
+<?php
+//$age = 25;
 
 /**
- * Bu ödevde günlük kalori hesaplaması yapacağız.
- * Yukarıdaki değişkenleri ve aşağıdaki formülü kullanarak
- * kişinin günlük kaç kalori alması gerektiğini hesaplayıp
- * bunu ekrana yazan PHP kodunu oluşturmamız gerekiyor.
+ * Bu ödevde age değişkeni içerisinde yer alan yaş değerinin bulunduğu
+ * yaş grubu tespit edilip ekrana bu yaş grubunun ismi yazılmalıdır. 
  * 
- * Erkekler için; 10 x kilo + 6.25 x boy - 5 x yaş + 5
- * Kadınlar için; 10 x kilo + 6.25 x boy - 5 x yaş - 161
+ * 0-14 = Çocuk
+ * 15-24 = Genç
+ * 25-64 = Yetişkin
+ * 65+ = Yaşlı
  * 
- * Örneğin;
- * $sex = "female";
- * $weight = 60;
- * $height = 170;
- * $age = 30;
+ * Ekran çıktısı için `echo` yada `print` kullanabilirsiniz.
  * 
- * Ekrana 1326.5 yazması gerekiyor.
+ * > **Not**: Çıktıda sadece `Çocuk`, `Genç`, `Yetişkin` veya `Yaşlı`
+ * yer almalıdır.
+ * 
+ * İyi çalışmalar.
  */
+if(isset($_POST['submit'])){
+if(!empty($_POST['yas'])){
+    $yas=$_POST['yas'];
+    //var_dump($yas); 
+    $age=(int)$yas;
+    
+    switch($age){
+        case($age>=0 && $age<=14):
+          echo"<h1>Çocuk</h1>"."\n";
+          break;
+          case($age<=24 && $age>=15):
+              echo"<h1>Genç</h1>"."\n";
+              break;
+              case($age<=64 && $age>=25):
+                  echo"<h1>Yetişkin</h1>"."\n";
+                  break;
+                  case($age>=65):
+                      echo"<h1>Yaşlı</h1>"."\n";
+                      break;
+                      default:
+                      break;
+  
+    }
+}
+else{
+    echo"hata boş bırakılamaz!";
+}
+}
+
+ 
+
+?>
