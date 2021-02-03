@@ -47,11 +47,13 @@ if(isset($_POST['submit'])){
         
         switch($sex){
             case($sex=="Kadın"):
-                $sonuc=(10*$weight) + (6.25*$height)- (5*$age) +5;
+                $sonuc=10*$weight + 6.25*$height- 5*$age +5;
+                $sonuc=(float)$sonuc;
                 echo"<h1>Kadın için hesaplanan sonuç:".$sonuc."</h2>";
                 break;
                 case($sex=="Erkek"):
-                   $sonuc2=(10 * $weight) + (6.25 * $height)- (5*$age) -161;
+                   $sonuc2=10 * $weight + 6.25 * $height- 5*$age -161;
+                   $sonuc2=(float)$sonuc2;
                    echo"<h1>Erkek için hesaplanan sonuç:".$sonuc2."</h2>";
                     break;
                     default:
