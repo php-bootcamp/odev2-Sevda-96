@@ -41,8 +41,7 @@ if(isset($_POST['submit'])){
         $height =  $_POST['height']; // boy (cm)
         $age =  $_POST['age']; // yaş (sene)
 
-        $weight=$weight;
-        $height=$height;
+        
         $age=(int)$age;
         
         switch($sex){
